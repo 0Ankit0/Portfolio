@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
@@ -48,9 +47,7 @@ export function Navbar() {
                   <a href={item.href}>
                     {item.name}
                     {activeSection === item.href.slice(1) && (
-                      <motion.div layoutId="underline">
-                        <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"></span>
-                      </motion.div>
+                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"></div>
                     )}
                   </a>
                 </Button>

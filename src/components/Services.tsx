@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code, Server, Layout, Database } from "lucide-react";
 
@@ -31,48 +30,22 @@ const services = [
 export default function Services() {
   return (
     <section id="services" className="container mx-auto px-4 py-16">
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <span className="text-3xl font-bold mb-8 text-center">Services</span>
-      </motion.h2>
-      <motion.div
-        variants={{
-          hidden: { opacity: 0 },
-          show: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.2,
-            },
-          },
-        }}
-        initial="hidden"
-        animate="show"
-      >
-        <span className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                show: { opacity: 1, y: 0 },
-              }}
-            >
-              <Card className="hover:shadow-lg transition-shadow duration-300">
-                <CardHeader className="text-center">
-                  {service.icon}
-                  <CardTitle>{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-center">{service.description}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </span>
-      </motion.div>
+      <h2 className="text-3xl font-bold mb-8 text-center">Services</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {services.map((service, index) => (
+          <div>
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader className="text-center">
+                {service.icon}
+                <CardTitle>{service.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-center">{service.description}</p>
+              </CardContent>
+            </Card>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -49,12 +48,7 @@ export default function Projects() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project, index) => (
-          <motion.div
-            key={project.title}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: index * 0.1 }}
-          >
+          <div key={project.title}>
             <Card>
               <CardHeader>
                 <CardTitle>{project.title}</CardTitle>
@@ -84,7 +78,7 @@ export default function Projects() {
                 </Button>
               </CardFooter>
             </Card>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

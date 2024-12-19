@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const skills = [
   { name: "C#", level: 90 },
   { name: ".NET Core", level: 85 },
@@ -19,12 +17,7 @@ export default function Skills() {
       <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {skills.map((skill, index) => (
-          <motion.div
-            key={skill.name}
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
-          >
+          <div key={skill.name}>
             <div className="flex justify-between mb-1">
               <span className="text-base font-medium">{skill.name}</span>
               <span className="text-sm font-medium">{skill.level}%</span>
@@ -32,7 +25,7 @@ export default function Skills() {
             <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
               <div className="bg-primary h-2.5 rounded-full" />
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>
