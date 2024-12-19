@@ -48,10 +48,9 @@ export function Navbar() {
                   <a href={item.href}>
                     {item.name}
                     {activeSection === item.href.slice(1) && (
-                      <motion.div
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
-                        layoutId="underline"
-                      />
+                      <motion.div layoutId="underline">
+                        <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"></span>
+                      </motion.div>
                     )}
                   </a>
                 </Button>

@@ -33,14 +33,7 @@ export default function Testimonials() {
   return (
     <section className="py-16 bg-gray-100 flex items-center">
       <div className="container mx-auto px-4">
-        <motion.h2
-          className="text-3xl font-bold mb-12 text-center"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Testimonials
-        </motion.h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">Testimonials</h2>
         <div className="max-w-4xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
