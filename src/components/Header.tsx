@@ -13,7 +13,7 @@ export function Header() {
       <div
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{
-          backgroundImage: "url('/placeholder.svg?height=1080&width=1920')",
+          backgroundImage: "url('/bg.jpg')",
         }}
       />
       <div className="absolute inset-0 bg-black opacity-50 z-10" />
@@ -44,7 +44,7 @@ export function Header() {
             <a href="#contact">Get in Touch</a>
           </Button>
           <Button asChild>
-            <a href="/path-to-your-cv.pdf" download>
+            <a href="/cv.pdf" download>
               <Download className="mr-2 h-4 w-4 text-black" /> Download CV
             </a>
           </Button>

@@ -21,7 +21,7 @@ export default function AboutMe() {
           transition={{ duration: 0.5 }}
         >
           <Image
-            src="/placeholder.svg?height=400&width=400"
+            src="/photo.jpg"
             alt="John Doe"
             width={400}
             height={400}
@@ -35,7 +35,7 @@ export default function AboutMe() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            With over 5 years of experience in fullstack development, I
+            With over a year of experience in fullstack development, I
             specialize in creating robust and scalable applications using .NET
             technologies and modern JavaScript frameworks. My passion lies in
             solving complex problems and delivering high-quality software

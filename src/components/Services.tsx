@@ -12,7 +12,8 @@ const services = [
   },
   {
     title: "Frontend Development",
-    description: "Responsive and interactive UIs with React and Next.js",
+    description:
+      "Responsive and interactive UIs with  Next.js along with Html,CSS, and Javascript",
     icon: <Layout className="h-8 w-8 mb-2" />,
   },
   {
@@ -22,7 +23,7 @@ const services = [
   },
   {
     title: "API Development",
-    description: "RESTful and GraphQL APIs for seamless integration",
+    description: "RESTful  APIs for seamless integration",
     icon: <Code className="h-8 w-8 mb-2" />,
   },
 ];

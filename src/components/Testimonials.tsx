@@ -9,25 +9,11 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Alice Johnson",
-    role: "CEO, TechCorp",
+    name: "Sagar Adhikari",
+    role: "Dotnet Developer,Insoft",
     content:
-      "John's expertise in .NET and React helped us deliver a complex project on time and within budget. His problem-solving skills are outstanding.",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-  {
-    name: "Bob Smith",
-    role: "CTO, StartupX",
-    content:
-      "Working with John was a pleasure. His full-stack skills and attention to detail resulted in a robust and user-friendly application.",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-  {
-    name: "Carol Williams",
-    role: "Project Manager, InnovateNow",
-    content:
-      "John's ability to understand complex requirements and translate them into efficient code is remarkable. He's a valuable asset to any development team.",
-    avatar: "/placeholder.svg?height=40&width=40",
+      "If you’re looking for someone who combines expertise, dedication, and a genuine team spirit, Ankit is the ideal candidate. I’m confident he will continue to excel in his future endeavors.",
+    avatar: "/sagar.jpg",
   },
 ];
 

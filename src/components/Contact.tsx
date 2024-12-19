@@ -1,7 +1,4 @@
-"use client";
-
-import { useForm } from "react-hook-form";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -9,96 +6,79 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { toast, useToast } from "@/hooks/use-toast";
+import { Button } from "@/components/ui/button";
+import { Mail, Phone, Github, Linkedin, Twitter, Globe } from "lucide-react";
 
 export default function Contact() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm();
-  const { toast } = useToast();
-
-  const onSubmit = async (data) => {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    // Show success toast
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-
-    // Reset form
-    reset();
-  };
-
   return (
-    <section id="contact" className="container mx-auto px-4 py-16">
-      <h3 className="text-2xl font-semibold mb-6">Contact Me</h3>
-      <Card>
-        <CardHeader>
-          <CardTitle>Send me a message</CardTitle>
-          <CardDescription>
-            I'll get back to you as soon as possible.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            <div>
-              <Label htmlFor="name">Name</Label>
-              <Input
-                id="name"
-                {...register("name", { required: "Name is required" })}
-                aria-invalid={errors.name ? "true" : "false"}
-              />
-              {errors.name && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.name.message}
-                </p>
-              )}
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+      <div className="container px-4 md:px-6">
+        <Card className="w-full max-w-3xl mx-auto shadow-lg">
+          <CardHeader className="text-center pb-8 pt-10">
+            <CardTitle className="text-3xl font-bold tracking-tight text-gray-900">
+              Get in Touch
+            </CardTitle>
+            <CardDescription className="text-lg text-gray-600 mt-2">
+              I'd love to hear from you. Here's how you can reach me...
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid gap-6 pb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <ContactButton
+                icon={<Mail className="mr-2 h-4 w-4" />}
+                href="mailto:ankitpaudel.1373@gmail.com"
+              >
+                Email Me
+              </ContactButton>
+              <ContactButton
+                icon={<Phone className="mr-2 h-4 w-4" />}
+                href="tel:+977 9840214223"
+              >
+                Call Me
+              </ContactButton>
+              <ContactButton
+                icon={<Github className="mr-2 h-4 w-4" />}
+                href="https://github.com/0ankit0"
+              >
+                GitHub
+              </ContactButton>
+              <ContactButton
+                icon={<Linkedin className="mr-2 h-4 w-4" />}
+                href="https://www.linkedin.com/in/ankit-poudyal-b5a431288/"
+              >
+                LinkedIn
+              </ContactButton>
             </div>
-            <div>
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                {...register("email", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "Invalid email address",
-                  },
-                })}
-                aria-invalid={errors.email ? "true" : "false"}
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.email.message}
-                </p>
-              )}
-            </div>
-            <div>
-              <Label htmlFor="message">Message</Label>
-              <Textarea
-                id="message"
-                {...register("message", { required: "Message is required" })}
-                aria-invalid={errors.message ? "true" : "false"}
-              />
-              {errors.message && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.message.message}
-                </p>
-              )}
-            </div>
-            <Button type="submit">Send Message</Button>
-          </form>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </div>
     </section>
+  );
+}
+
+function ContactButton({
+  children,
+  icon,
+  href,
+}: {
+  children: React.ReactNode;
+  icon: React.ReactNode;
+  href: string;
+}) {
+  return (
+    <Button
+      asChild
+      variant="outline"
+      className="w-full bg-white hover:bg-gray-50 text-gray-700 hover:text-gray-900 transition-colors"
+    >
+      <Link
+        href={href}
+        target="_blank"
+        className="flex items-center justify-center"
+      >
+        {icon}
+        {children}
+      </Link>
+    </Button>
   );
 }
