@@ -54,7 +54,7 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
         </div>
       </div>
     </nav>

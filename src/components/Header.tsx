@@ -28,7 +28,7 @@ export function Header() {
           </Button>
           <Button asChild>
             <a href="/cv.pdf" download>
-              <Download className="mr-2 h-4 w-4 text-black" /> Download CV
+              <Download className="mr-2 h-4 w-4 text-white" /> Download CV
             </a>
           </Button>
         </div>

@@ -47,7 +47,9 @@ export function Portfolio() {
         </Suspense>
       </main>
       <footer className="container mx-auto px-4 py-8 text-center">
-        <p>&copy; 2023 John Doe. All rights reserved.</p>
+        <p>
+          &copy;{new Date().getFullYear()} Ankit Poudyal. All rights reserved.
+        </p>
       </footer>
     </div>
   );

@@ -11,7 +11,7 @@ import { Mail, Phone, Github, Linkedin, Twitter, Globe } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+    <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
       <div className="container px-4 md:px-6">
         <Card className="w-full max-w-3xl mx-auto shadow-lg">
           <CardHeader className="text-center pb-8 pt-10">

@@ -58,17 +58,25 @@ const TestimonialsSkeleton = () => (
 );
 
 const ContactSkeleton = () => (
-  <div className="container mx-auto px-4 py-16 space-y-4">
-    <Skeleton className="h-8 w-48 mx-auto" />
-    <div className="max-w-md mx-auto space-y-4">
-      <Skeleton className="h-10 w-full" />
-      <Skeleton className="h-10 w-full" />
-      <Skeleton className="h-32 w-full" />
-      <Skeleton className="h-10 w-full" />
+  <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+    <div className="container px-4 md:px-6">
+      <div className="w-full max-w-3xl mx-auto shadow-lg">
+        <div className="text-center pb-8 pt-10">
+          <Skeleton className="h-8 w-48 mx-auto mb-2" />
+          <Skeleton className="h-6 w-64 mx-auto" />
+        </div>
+        <div className="grid gap-6 pb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Skeleton className="h-12 w-full" />
+            <Skeleton className="h-12 w-full" />
+            <Skeleton className="h-12 w-full" />
+            <Skeleton className="h-12 w-full" />
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 );
-
 export {
   ContactSkeleton,
   TestimonialsSkeleton,
