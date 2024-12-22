@@ -11,14 +11,15 @@ import { Mail, Phone, Github, Linkedin, Twitter, Globe } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+    <section id="contact" className="w-full py-12 md:py-24 lg:py-32 ">
+      <h2 className="text-4xl font-bold mb-12 text-center">Contact</h2>
       <div className="container px-4 md:px-6">
         <Card className="w-full max-w-3xl mx-auto shadow-lg">
           <CardHeader className="text-center pb-8 pt-10">
-            <CardTitle className="text-3xl font-bold tracking-tight text-gray-900">
+            <CardTitle className="text-2xl font-bold tracking-tight ">
               Get in Touch
             </CardTitle>
-            <CardDescription className="text-lg text-gray-600 mt-2">
+            <CardDescription className="text-lg text-gray-400 mt-2">
               I'd love to hear from you. Here's how you can reach me...
             </CardDescription>
           </CardHeader>
