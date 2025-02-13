@@ -30,7 +30,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="py-16  flex items-center">
+    <section id="testimonials" className="pb-16 py-32  flex items-center">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center">Testimonials</h2>
         <div className="max-w-4xl mx-auto">
