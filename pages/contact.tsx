@@ -32,7 +32,7 @@ export default function ContactPage({ theme }: ContactPageProps) {
               isDarkMode ? "text-gray-200" : "text-gray-700"
             }`}
           >
-            Ready to start your next project? Let's work together to create
+            Ready to start your next project? Let us work together to create
             something amazing.
           </p>
         </motion.div>
