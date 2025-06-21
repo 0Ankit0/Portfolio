@@ -31,8 +31,8 @@ export default function AboutPage({ theme }: AboutPageProps) {
               isDarkMode ? "text-gray-200" : "text-gray-700"
             }`}
           >
-            I'm a passionate fullstack .NET developer with expertise in creating
-            robust, scalable digital solutions.
+            I am a passionate fullstack .NET developer with expertise in
+            creating robust, scalable digital solutions.
           </p>
         </motion.div>
 
@@ -72,9 +72,9 @@ export default function AboutPage({ theme }: AboutPageProps) {
                 isDarkMode ? "text-gray-300" : "text-gray-600"
               }`}
             >
-              With years of experience in .NET development, I've worked on
+              With years of experience in .NET development, I have worked on
               various projects ranging from enterprise applications to
-              innovative web solutions. I'm passionate about clean code,
+              innovative web solutions. I am passionate about clean code,
               scalable architecture, and delivering high-quality software that
               meets business objectives.
             </p>
@@ -83,7 +83,7 @@ export default function AboutPage({ theme }: AboutPageProps) {
                 isDarkMode ? "text-gray-300" : "text-gray-600"
               }`}
             >
-              When I'm not coding, I enjoy exploring new technologies,
+              When I am not coding, I enjoy exploring new technologies,
               contributing to open-source projects, and sharing knowledge with
               the developer community.
             </p>
