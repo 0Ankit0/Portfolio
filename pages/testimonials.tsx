@@ -119,7 +119,7 @@ export default function TestimonialsPage({ theme }: TestimonialsPageProps) {
                           isDarkMode ? "text-gray-200" : "text-gray-700"
                         }`}
                       >
-                        "{testimonials[currentIndex].content}"
+                        &quot;{testimonials[currentIndex].content}&quot;
                       </blockquote>
                       <div>
                         <h4
