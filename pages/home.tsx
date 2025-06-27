@@ -65,7 +65,7 @@ export default function HomePage({ theme, scrollToSection }: HomePageProps) {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-gray-600 to-gray-800 hover:from-gray-700 hover:to-gray-900 text-white border-0 shadow-lg"
+              className={`bg-gradient-to-r from-gray-100 to-gray-300 hover:from-gray-200 hover:to-gray-400 text-gray-800 border-0 shadow-lg backdrop-blur-sm dark:from-gray-600 dark:to-gray-800 dark:hover:from-gray-700 dark:hover:to-gray-900 dark:text-white`}
               onClick={() => scrollToSection("contact")}
             >
               Get In Touch
@@ -73,7 +73,7 @@ export default function HomePage({ theme, scrollToSection }: HomePageProps) {
             <Button
               size="lg"
               variant="outline"
-              className={` bg-gradient-to-r from-gray-600 to-gray-800 hover:from-gray-700 hover:to-gray-900 text-white border-0 shadow-lg backdrop-blur-sm`}
+              className={`bg-gradient-to-r from-gray-100 to-gray-300 hover:from-gray-200 hover:to-gray-400 text-gray-800 border-0 shadow-lg backdrop-blur-sm dark:from-gray-600 dark:to-gray-800 dark:hover:from-gray-700 dark:hover:to-gray-900 dark:text-white`}
             >
               <a href="/cv.pdf" className="flex" download>
                 <Download className="mr-2 h-4 w-4" /> Download CV

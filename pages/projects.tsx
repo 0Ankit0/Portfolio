@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useRef } from "react";
 
 interface ProjectsPageProps {
   theme: string | undefined;
@@ -10,6 +11,8 @@ interface ProjectsPageProps {
 
 export default function ProjectsPage({ theme }: ProjectsPageProps) {
   const isDarkMode = theme === "dark";
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
 
   const projects = [
     {
@@ -33,7 +36,7 @@ export default function ProjectsPage({ theme }: ProjectsPageProps) {
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
@@ -54,7 +57,7 @@ export default function ProjectsPage({ theme }: ProjectsPageProps) {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto" ref={ref}>
           {projects.map((project, index) => (
             <motion.a
               key={project.title}
@@ -62,8 +65,8 @@ export default function ProjectsPage({ theme }: ProjectsPageProps) {
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: inView ? index * 0.2 : 0 }}
               whileHover={{ y: -10 }}
               className="block"
             >

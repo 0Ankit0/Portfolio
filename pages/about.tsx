@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
 
 interface AboutPageProps {
   theme: string | undefined;
@@ -9,13 +10,15 @@ interface AboutPageProps {
 
 export default function AboutPage({ theme }: AboutPageProps) {
   const isDarkMode = theme === "dark";
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
@@ -36,10 +39,13 @@ export default function AboutPage({ theme }: AboutPageProps) {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div
+          className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto"
+          ref={ref}
+        >
           <motion.div
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
             <Image
@@ -53,7 +59,7 @@ export default function AboutPage({ theme }: AboutPageProps) {
 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >

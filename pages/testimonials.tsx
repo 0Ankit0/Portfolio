@@ -1,10 +1,10 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useEffect, useCallback } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 
 interface TestimonialsPageProps {
   theme: string | undefined;
@@ -54,12 +54,15 @@ export default function TestimonialsPage({ theme }: TestimonialsPageProps) {
   const handleMouseEnter = () => setIsAutoPlaying(false);
   const handleMouseLeave = () => setIsAutoPlaying(true);
 
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
@@ -79,7 +82,7 @@ export default function TestimonialsPage({ theme }: TestimonialsPageProps) {
           </p>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto" ref={ref}>
           {/* Slider Container */}
           <div
             className="relative"
@@ -92,7 +95,7 @@ export default function TestimonialsPage({ theme }: TestimonialsPageProps) {
                 <motion.div
                   key={currentIndex}
                   initial={{ opacity: 0, x: 300 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  animate={inView ? { opacity: 1, x: 0 } : {}}
                   exit={{ opacity: 0, x: -300 }}
                   transition={{ duration: 0.5, ease: "easeInOut" }}
                 >
