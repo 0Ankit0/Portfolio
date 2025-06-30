@@ -98,9 +98,29 @@ export default function Component() {
   const scrollToSection = (section: string) => {
     const ref = sectionRefs[section as keyof typeof sectionRefs];
     if (ref && ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
+      // Close mobile menu first
       setIsMenuOpen(false);
-      setActiveSection(section); // Set active section on click
+      // Small delay to ensure menu closes before scrolling
+      setTimeout(() => {
+        ref.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+      setActiveSection(section);
+    } else {
+      // Fallback: try to find element by ID
+      const element = document.getElementById(section);
+      if (element) {
+        setIsMenuOpen(false);
+        setTimeout(() => {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 100);
+        setActiveSection(section);
+      }
     }
   };
 
@@ -176,10 +196,10 @@ export default function Component() {
             ))}
           </div>
 
-          {/* Theme Toggle */}
+          {/* Desktop Theme Toggle */}
           <motion.button
             onClick={toggleTheme}
-            className={`p-2 rounded-full transition-colors ${
+            className={`hidden md:block p-2 rounded-full transition-colors ${
               isDarkMode
                 ? "bg-gray-800 text-white hover:bg-gray-700"
                 : "bg-gray-200 text-black hover:bg-gray-300"
@@ -195,15 +215,42 @@ export default function Component() {
             )}
           </motion.button>
 
-          {/* Mobile Menu Button */}
-          <button
-            className={`md:hidden transition-colors ${
-              isDarkMode ? "text-white" : "text-black"
-            }`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X /> : <Menu />}
-          </button>
+          {/* Mobile Controls */}
+          <div className="md:hidden flex items-center space-x-2">
+            {/* Mobile Theme Toggle */}
+            <motion.button
+              onClick={toggleTheme}
+              className={`p-2 rounded-full transition-colors ${
+                isDarkMode
+                  ? "bg-gray-800 text-white hover:bg-gray-700"
+                  : "bg-gray-200 text-black hover:bg-gray-300"
+              }`}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Toggle theme"
+            >
+              {isDarkMode ? (
+                <Sun className="w-4 h-4" />
+              ) : (
+                <Moon className="w-4 h-4" />
+              )}
+            </motion.button>
+
+            {/* Mobile Menu Button */}
+            <button
+              className={`p-2 transition-colors ${
+                isDarkMode ? "text-white" : "text-black"
+              }`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
