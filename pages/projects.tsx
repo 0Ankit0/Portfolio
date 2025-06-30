@@ -29,6 +29,19 @@ export default function ProjectsPage({ theme }: ProjectsPageProps) {
       tags: ["Nodejs", "Flutter", "MongoDB"],
       link: "https://github.com/0Ankit0/Service_pro",
     },
+    {
+      title: "Futsal Api",
+      description: "A RESTful API for managing futsal bookings and schedules.",
+      tags: ["C#", ".NET Core", "PostgreSQL"],
+      link: "https://github.com/0Ankit0/Futsal",
+    },
+    {
+      title: "HR Management System",
+      description:
+        "A comprehensive HR management system for employee records and payroll.",
+      tags: ["C#", ".NET Core", "PostgreSQL", "Blazor"],
+      link: "https://github.com/0Ankit0/HR",
+    },
   ];
 
   return (
